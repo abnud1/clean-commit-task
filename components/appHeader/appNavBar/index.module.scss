@@ -1,0 +1,20 @@
+.nav {
+  height: 118px;
+  .nav-list {
+    margin-top: 50px;
+    margin-left: 3.472%;
+    li:not(:last-child) {
+      margin-right: 3.125%;
+    }
+  }
+  .nav-icons {
+    margin-top: 50px;
+    margin-left: 16.8%;
+  }
+  .exchange-icon {
+    margin-right: 10px;
+  }
+  > * {
+    margin-top: 44px;
+  }
+}

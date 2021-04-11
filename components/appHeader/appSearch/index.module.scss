@@ -1,0 +1,22 @@
+.search-container {
+  margin-top: 112px;
+  .title {
+    font-size: 44px;
+  }
+  .description {
+    margin-top: 13px;
+    font-size: 18px;
+  }
+  .search {
+    margin-top: 41px;
+    width: 44.1%;
+    padding: 7px 0;
+    .search-icon {
+      margin-left: 1.875%;
+    }
+    .search-input {
+      margin-left: 0.7%;
+      width: 64%;
+    }
+  }
+}
