@@ -1,0 +1,30 @@
+.estate-viewer {
+  padding: 0;
+  .title,
+  .price {
+    font-size: 18px;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .price,
+  .address {
+    margin-top: 6px;
+  }
+  .address {
+    font-size: 14px;
+  }
+  .rooms {
+    margin-top: 7px;
+    font-size: 14px;
+    .rooms-info {
+      margin-left: 10px;
+    }
+    .bath-info {
+      margin-left: 11px;
+    }
+    .size-info {
+      margin-left: 12px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.selected-estate {
+  margin-top: 70px;
+  height: 700px;
+  .selected-estate-info {
+    position: absolute;
+    top: 188px;
+    bottom: 188px;
+    left: 165px;
+    width: 540px;
+    height: 324px;
+    padding: 50px 0 50px 50px;
+    .status-btn {
+      width: fit-content;
+      padding: 0 13px;
+    }
+    .title {
+      margin-top: 30px;
+      font-size: 32px;
+    }
+    .price {
+      margin-top: 12px;
+      font-size: 24px;
+    }
+    .address {
+      margin-top: 11px;
+      font-size: 18px;
+    }
+    .rooms {
+      margin-top: 21px;
+      font-size: 14px;
+      .rooms-info {
+        margin-left: 10px;
+      }
+      .bath-info {
+        margin-left: 21px;
+      }
+      .size-info {
+        margin-left: 22px;
+      }
+    }
+  }
+}

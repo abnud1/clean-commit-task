@@ -12,7 +12,7 @@ export default function AppHeader() {
           </clipPath>
         </defs>
       </svg>
-      <header className={`bg-blue ${styles.header}`}>
+      <header className={`bg-blue padded ${styles.header}`}>
         <AppNavBar />
         <AppSearch />
       </header>

@@ -22,13 +22,15 @@ function PriceRangeHandle(props: {
   style?: React.CSSProperties;
   ref?: React.Ref<any>;
 }) {
-  const { value, index, ...restProps } = props;
+  // we don't use dragging but we do this so that we don't pass it to Handle
+  // we do this so we don't see an error from react in console
+  const { value, index, dragging, ...restProps } = props;
   const valueAsString = `${value}`;
   return (
     /* eslint-disable-next-line react/jsx-props-no-spreading */
     <Handle key={index} value={value} {...(restProps as any)}>
       <span
-        className="relative top-2"
+        className="relative top-4 text-blue"
         style={{ left: `-${valueAsString.length / 2}ch` }}
       >{`$${value}`}</span>
     </Handle>
@@ -54,13 +56,15 @@ function SquareRangeHandle(props: {
   style?: React.CSSProperties;
   ref?: React.Ref<any>;
 }) {
-  const { value, index, ...restProps } = props;
+  // we don't use dragging but we do this so that we don't pass it to Handle
+  // we do this so we don't see an error from react in console
+  const { value, index, dragging, ...restProps } = props;
   const valueAsString = `${value}`;
   return (
     /* eslint-disable-next-line react/jsx-props-no-spreading */
     <Handle key={index} value={value} {...(restProps as any)}>
       <span
-        className="relative top-2"
+        className="relative top-4 text-blue"
         style={{ left: `-${valueAsString.length / 4}ch` }}
       >
         {value}

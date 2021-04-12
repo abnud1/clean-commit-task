@@ -1,0 +1,42 @@
+.about-us {
+  margin-top: 70px;
+  > section {
+    padding-left: 3.47%;
+    .title {
+      margin-top: 50px;
+      font-size: 44px;
+    }
+  }
+  .information {
+    padding-right: 2.08%;
+    .address,
+    .phone,
+    .shifts {
+      font-size: 18px;
+    }
+    .address {
+      margin-top: 25px;
+    }
+    .phone,
+    .shifts {
+      margin-top: 21px;
+    }
+  }
+  .ads {
+    .title {
+      width: 15ch;
+    }
+    .ads-content {
+      margin-top: 25px;
+      width: 34ch;
+    }
+    .contact-us-btn {
+      margin-top: 30px;
+      width: 134px;
+      height: 50px;
+      margin-bottom: 50px;
+      font-size: 14px;
+      padding: 0 2.25%;
+    }
+  }
+}
