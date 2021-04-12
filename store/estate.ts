@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type EstateType = "House" | "Apartment";
-type EstateStatus = "for-sale" | "for-rent" | "reserved";
+export type EstateType = "House" | "Apartment";
+export type EstateStatus = "for-sale" | "for-rent" | "reserved";
 export interface Estate {
   id: string;
   title: string;
@@ -125,8 +125,8 @@ export function filteredEstates(state: EstatesState): Estate[] {
       return false;
     }
     if (
-      !v.address.includes(state.filters.search) &&
-      !v.title.includes(state.filters.search)
+      !v.address.toLowerCase().includes(state.filters.search.toLowerCase()) &&
+      !v.title.toLowerCase().includes(state.filters.search.toLowerCase())
     ) {
       return false;
     }
@@ -134,7 +134,7 @@ export function filteredEstates(state: EstatesState): Estate[] {
   });
   if (state.orderBy) {
     // @ts-expect-error
-    result.sort((a, b) => b[state.orderBy] - a[state.orderBy]);
+    result.sort((a, b) => a[state.orderBy] - b[state.orderBy]);
   }
   return result.slice(0, state.numberOfShownEstates);
 }
@@ -149,4 +149,5 @@ export const {
   showMore,
   search,
   setStatus,
+  orderBy,
 } = slice.actions;

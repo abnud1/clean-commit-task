@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
           priceRange: [0, 10000000],
           footageRange: [0, 2000],
           search: "",
+          status: "for-rent",
         },
         numberOfShownEstates: 6,
         selectedEstate: estates.data[0],

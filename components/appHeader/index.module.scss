@@ -2,3 +2,11 @@
   height: 485px;
   clip-path: url(#header-rectangle);
 }
+.overlay {
+  top: 118px;
+  right: 2%;
+  height: 367px;
+  clip-path: url(#overlay-rectangle);
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0.01));
+  mix-blend-mode: soft-light;
+}

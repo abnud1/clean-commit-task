@@ -1,7 +1,13 @@
 /* eslint-disable react/require-default-props */
+import { useDispatch, useSelector } from "react-redux";
 import { Handle, Range } from "rc-slider";
 import styles from "./index.module.scss";
 import "rc-slider/assets/index.css";
+import {
+  EstatesState,
+  setFootageRange,
+  setPriceRange,
+} from "../../../store/estate";
 
 function PriceRangeHandle(props: {
   className: string;
@@ -73,13 +79,26 @@ function SquareRangeHandle(props: {
   );
 }
 export default function FiltersRanges() {
+  const priceRange = useSelector(
+    (state: EstatesState) => state.filters.priceRange
+  );
+  const footageRange = useSelector(
+    (state: EstatesState) => state.filters.footageRange
+  );
+  const dispatch = useDispatch();
+  const priceChange = (value: number[]) =>
+    dispatch(setPriceRange([value[0], value[1]]));
+  const footageChange = (value: number[]) =>
+    dispatch(setFootageRange([value[0], value[1]]));
+
   return (
     <div className="flex">
       <div className={`w-1/2 flex-col ${styles["range-container"]}`}>
         <span className="font-bold">Price Range</span>
         <Range
           max={1000000}
-          defaultValue={[100000, 400000]}
+          value={priceRange}
+          onChange={priceChange}
           className="custom-range"
           handle={PriceRangeHandle}
         />
@@ -88,7 +107,8 @@ export default function FiltersRanges() {
         <span className="font-bold">Square footage</span>
         <Range
           max={10000}
-          defaultValue={[1000, 4000]}
+          value={footageRange}
+          onChange={footageChange}
           className="custom-range"
           handle={SquareRangeHandle}
         />

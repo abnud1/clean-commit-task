@@ -1,10 +1,20 @@
 interface DropDownProps {
   options: string[];
+  values: string[];
+  value: string;
+  onChange: (value: string | undefined) => void;
   bordered?: boolean;
   wrapperClassName?: string;
 }
-function DropDown(props: DropDownProps) {
-  const { options, bordered, wrapperClassName } = props;
+function DropDownSelect(props: DropDownProps) {
+  const {
+    options,
+    bordered,
+    values,
+    onChange,
+    value,
+    wrapperClassName,
+  } = props;
   if (options.length === 0) return null;
   return (
     <div className={`relative inline-flex ${wrapperClassName}`}>
@@ -23,16 +33,26 @@ function DropDown(props: DropDownProps) {
         className={`rounded-full w-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none ${
           bordered ? "border" : ""
         }`}
+        value={value}
+        onChange={(ev) => {
+          if (ev.target.value === "") {
+            onChange(undefined);
+          } else {
+            onChange(ev.target.value);
+          }
+        }}
       >
-        {options.map((v) => (
-          <option key={v}>{v}</option>
+        {options.map((v, index) => (
+          <option key={v} value={values[index]}>
+            {v}
+          </option>
         ))}
       </select>
     </div>
   );
 }
-DropDown.defaultProps = {
+DropDownSelect.defaultProps = {
   bordered: false,
   wrapperClassName: "",
 };
-export default DropDown;
+export default DropDownSelect;

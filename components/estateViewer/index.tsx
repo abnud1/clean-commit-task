@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Estate } from "../../store/estate";
+import { useDispatch } from "react-redux";
+import { Estate, selectEstate } from "../../store/estate";
 import styles from "./index.module.scss";
 
 interface EstateViewerProps {
@@ -8,9 +9,13 @@ interface EstateViewerProps {
 }
 function EstateViewer(props: EstateViewerProps) {
   const { estate, className } = props;
+  const dispatch = useDispatch();
+  const onClick = () => dispatch(selectEstate(estate));
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events
     <div
       className={`flex flex-col ${className ?? ""} ${styles["estate-viewer"]}`}
+      onClick={onClick}
     >
       <Image src={estate.image} width={350} height={250} layout="fixed" />
       <div className={`text-gray ${styles.title}`}>{estate.title}</div>
